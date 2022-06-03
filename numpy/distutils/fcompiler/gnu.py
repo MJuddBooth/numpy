@@ -141,7 +141,7 @@ class GnuFCompiler(FCompiler):
                     filename = get_makefile_filename()
                     sc.parse_makefile(filename, g)
                 target = g.get('MACOSX_DEPLOYMENT_TARGET', '10.3')
-                os.environ['MACOSX_DEPLOYMENT_TARGET'] = target
+                os.environ['MACOSX_DEPLOYMENT_TARGET'] = str(target)
                 if target == '10.3':
                     s = 'Env. variable MACOSX_DEPLOYMENT_TARGET set to 10.3'
                     warnings.warn(s, stacklevel=2)
